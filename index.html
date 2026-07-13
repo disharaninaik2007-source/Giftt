@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✨ A Special Surprise ✨</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff0066,#7b2ff7,#00c6ff,#ff4d4d);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+text-align:center;
+color:white;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+box-shadow:0 0 30px rgba(255,255,255,.3);
+animation:zoom 2s;
+}
+
+@keyframes zoom{
+from{
+opacity:0;
+transform:scale(.7);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+h1{
+font-size:55px;
+text-shadow:0 0 15px white;
+}
+
+p{
+font-size:22px;
+margin:20px;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff0066;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ffe6f0;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>✨ Hey You Handsome✨</h1>
+<p>
+Every moment becomes a little more beautiful when you're around. ❤️
+</p>
+
+<button onclick="surprise()">Open Surprise</button>
+</div>
+
+<script>
+function surprise(){
+document.body.innerHTML = `
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:white;font-size:45px;text-align:center;">
+💖 You Make My World Brighter I don't know whether I love you or not, but whenever I talk to you, I feel a sense of peace and comfort Ever since I started talking to you, I don't want to go a single day without talking to you. I don't know why I have this feeling; I just can't understand what is happening to me 💖
+</div>`;
+}
+
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"%";
+h.style.animationDuration=(5+Math.random()*5)+"s";
+h.style.fontSize=(15+Math.random()*30)+"px";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
